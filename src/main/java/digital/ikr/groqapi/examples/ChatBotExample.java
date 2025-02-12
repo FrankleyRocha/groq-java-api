@@ -1,10 +1,12 @@
-package digital.ikr.groqapi;
+package digital.ikr.groqapi.examples;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+import digital.ikr.groqapi.GroqApi;
+
+public class ChatBotExample {
 
     public static void main(String[] args) throws Exception {
 
