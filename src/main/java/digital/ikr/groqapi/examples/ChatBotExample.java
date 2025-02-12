@@ -15,7 +15,7 @@ public class ChatBotExample {
         GroqChatBot bot = new GroqChatBot(
             api,
             model,
-            "Você é um assistentente que fala português, fale o máximo possível como um ser humano de forma humanizada!"
+            "Você é um assistentente que fala português, fale como um ser humano da forma mais humanizada possível!"
         );
 
         Scanner sc = new Scanner(System.in);
