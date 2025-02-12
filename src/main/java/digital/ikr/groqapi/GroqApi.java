@@ -4,6 +4,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.jayway.jsonpath.JsonPath;
@@ -55,6 +56,37 @@ public class GroqApi {
         String content = JsonPath.read(responseBody, "$.choices[0].message.content");
 
         return content;
+
+    }
+
+    public String completions(String model, String message){
+
+        List<Message> messages = new ArrayList<>();
+
+        messages.add(new GroqApi.Message(
+            "user",
+            message
+        ));
+
+        return completions(model, messages);
+
+    }
+
+    public String completions(String model, String userMessage, String systemMessage){
+
+        List<Message> messages = new ArrayList<>();
+
+        messages.add(new GroqApi.Message(
+            "system",
+            systemMessage
+        ));
+
+        messages.add(new GroqApi.Message(
+            "user",
+            userMessage
+        ));
+
+        return completions(model, messages);
 
     }
 

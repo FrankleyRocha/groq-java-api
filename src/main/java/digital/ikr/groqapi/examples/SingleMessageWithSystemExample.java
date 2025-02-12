@@ -1,11 +1,8 @@
 package digital.ikr.groqapi.examples;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import digital.ikr.groqapi.GroqApi;
 
-public class SimpleExample {
+public class SingleMessageWithSystemExample {
 
     public static void main(String[] args) {
 
@@ -14,21 +11,10 @@ public class SimpleExample {
 
         GroqApi api = new GroqApi(apiKey);
 
-        List<GroqApi.Message> messages = new ArrayList<>();
-
-        messages.add(new GroqApi.Message(
-            "system",
-            "Você é um assistentente que fala português"
-        ));
-
-        messages.add(new GroqApi.Message(
-            "user",
-            "O que é Java?"
-        ));
-
         String assistantMessage = api.completions(
             model,
-            messages
+            "O que é Java?",
+            "Você é um assistente que fala português do Brasil e dá respostas curtas, porem concisas e objetivas"
         );
 
         System.out.println(assistantMessage);
