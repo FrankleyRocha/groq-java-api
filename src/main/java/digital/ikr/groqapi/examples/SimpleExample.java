@@ -5,7 +5,7 @@ import java.util.List;
 
 import digital.ikr.groqapi.GroqApi;
 
-public class CompletionExample {
+public class SimpleExample {
 
     public static void main(String[] args) {
 
