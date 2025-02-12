@@ -14,10 +14,10 @@ public class ChatBotExample {
 
         GroqApi api = new GroqApi(apiKey);
 
-        List<GroqApi.Message> messages = new ArrayList<>();
-        messages.add(new GroqApi.Message(
+        List<GroqApi.Message> memory = new ArrayList<>();
+        memory.add(new GroqApi.Message(
             "system",
-            "Você é um assistentente que fala português"
+            "Você é um assistentente que fala português, fale o máximo possível como um ser humano de forma humanizada!"
         ));
 
         Scanner sc = new Scanner(System.in);
@@ -29,6 +29,7 @@ public class ChatBotExample {
 
         while(true){
 
+            System.out.print("$ ");
             String userMessage = sc.nextLine();
 
             if("sair".equals(userMessage.toLowerCase())){
@@ -36,19 +37,21 @@ public class ChatBotExample {
                 break;
             }
 
-            messages.add(new GroqApi.Message(
+            memory.add(new GroqApi.Message(
                 "user",
                 userMessage
             ));
 
             String assistantMessage = api.completions(
                 model,
-                messages
+                memory
             );
 
+            System.out.println();
             System.out.println(assistantMessage);
+            System.out.println();
 
-            messages.add(new GroqApi.Message(
+            memory.add(new GroqApi.Message(
                 "assistant",
                 assistantMessage
             ));
