@@ -1,6 +1,15 @@
 # groq-java-api
 Groq API Java Client Library
 
+# maven
+```xml
+<dependency>
+    <groupId>io.github.frankleyrocha</groupId>
+    <artifactId>groqapi</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
+
 # SingleMessageExample
 ````Java
 package io.github.frankleyrocha.groqapi.examples;
