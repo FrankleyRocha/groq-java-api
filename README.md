@@ -1,8 +1,19 @@
 # groq-java-api
-Groq API Java Client Library
-- [Examples git repo](https://github.com/FrankleyRocha/groq-java-api-examples/tree/main/src/main/java/io/github/frankleyrocha/groqapi/examples)
 
-# maven
+**Groq API Java Client Library**
+A Java library for interacting with the Groq API.
+
+## 📂 Examples
+
+Check out practical usage examples in the repository:
+🔗 [groq-java-api-examples](https://github.com/FrankleyRocha/groq-java-api-examples/tree/main/src/main/java/io/github/frankleyrocha/groqapi/examples)
+
+---
+
+## 📦 Installation via Maven
+
+Add the following dependency to your `pom.xml`:
+
 ```xml
 <dependency>
     <groupId>io.github.frankleyrocha</groupId>
@@ -11,8 +22,15 @@ Groq API Java Client Library
 </dependency>
 ```
 
-# SingleMessageExample
-````Java
+---
+
+## 🚀 Usage Examples
+
+### 📝 SingleMessageExample
+
+A simple request to generate a response from the AI:
+
+```java
 package io.github.frankleyrocha.groqapi.examples;
 
 import io.github.frankleyrocha.groqapi.GroqApi;
@@ -28,18 +46,22 @@ public class SingleMessageExample {
 
         String assistantMessage = api.completions(
             model,
-            "O que é Java?"
+            "What is Java?"
         );
 
         System.out.println(assistantMessage);
 
     }
-
 }
-````
+```
 
-# SingleMessageWithSystemExample
-````Java
+---
+
+### 🛠️ SingleMessageWithSystemExample
+
+An example using system instructions for short and concise responses:
+
+```java
 package io.github.frankleyrocha.groqapi.examples;
 
 import io.github.frankleyrocha.groqapi.GroqApi;
@@ -55,19 +77,23 @@ public class SingleMessageWithSystemExample {
 
         String assistantMessage = api.completions(
             model,
-            "O que é Java?",
-            "Você é um assistente que fala português do Brasil e dá respostas curtas, concisas e objetivas de no máximo 5 (cinco) linhas."
+            "What is Java?",
+            "You are an assistant who speaks Brazilian Portuguese and provides short, concise, and objective answers of no more than 5 lines."
         );
 
         System.out.println(assistantMessage);
 
     }
-
 }
-````
+```
 
-# ChatBotExample
-````Java
+---
+
+### 🤖 ChatBotExample
+
+A simple chatbot example:
+
+```java
 package io.github.frankleyrocha.groqapi.examples;
 
 import java.util.Scanner;
@@ -85,20 +111,19 @@ public class ChatBotExample {
         GroqChatBot bot = new GroqChatBot(
             api,
             model,
-            "Você é um assistentente que fala português, fale como um ser humano da forma mais humanizada possível!"
+            "You are an assistant who speaks Portuguese. Speak in the most human-like manner possible!"
         );
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Bem vindo, você está conversando com o modelo: "+model);
-        System.out.println("Escreva \"sair\" para encerrar!");
+        System.out.println("Welcome! You are chatting with the model: " + model);
+        System.out.println("Type \"exit\" to end the conversation.");
 
-        while(true){
-
+        while (true) {
             System.out.print("$ ");
             String userMessage = sc.nextLine();
 
-            if("sair".equals(userMessage.toLowerCase())){
+            if ("exit".equalsIgnoreCase(userMessage)) {
                 sc.close();
                 break;
             }
@@ -108,9 +133,30 @@ public class ChatBotExample {
             System.out.println();
             System.out.println(assistantMessage);
             System.out.println();
-
         }
-
     }
 }
-````
+```
+
+---
+
+## 🌍 Contributing
+
+This library is **community-maintained**. Contributions are welcome!
+
+### Ways to contribute:
+1. **Report Issues**: Open an issue describing the problem.
+2. **Suggest Improvements**: Share ideas for new features.
+3. **Submit Pull Requests**:
+   - Fork the repository.
+   - Create a new branch (`git checkout -b feature-name`).
+   - Make your changes and commit (`git commit -m "Description of changes"`).
+   - Open a pull request! 🎉
+
+We appreciate all contributions! 💙
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
