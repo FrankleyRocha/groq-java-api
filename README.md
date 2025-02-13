@@ -1,5 +1,6 @@
 # groq-java-api
 Groq API Java Client Library
+[Examples repo](https://github.com/FrankleyRocha/groq-java-api-examples)
 
 # maven
 ```xml
@@ -9,8 +10,6 @@ Groq API Java Client Library
     <version>1.0.1</version>
 </dependency>
 ```
-
-[Examples repo](https://github.com/FrankleyRocha/groq-java-api-examples)
 
 # SingleMessageExample
 ````Java
