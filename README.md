@@ -46,7 +46,7 @@ public class SingleMessageExample {
 
         String assistantMessage = api.completions(
             model,
-            "What is Java?"
+            "What is Java?" //User message
         );
 
         System.out.println(assistantMessage);
@@ -77,8 +77,9 @@ public class SingleMessageWithSystemExample {
 
         String assistantMessage = api.completions(
             model,
-            "What is Java?",
-            "You are an assistant who speaks Brazilian Portuguese and provides short, concise, and objective answers of no more than 5 lines."
+            "What is Java?", //User message
+            "You are an assistant who provides short, "+ //System message
+            "concise, and objective answers of no more than 5 lines."
         );
 
         System.out.println(assistantMessage);
@@ -111,7 +112,7 @@ public class ChatBotExample {
         GroqChatBot bot = new GroqChatBot(
             api,
             model,
-            "You are an assistant who speaks Portuguese. Speak in the most human-like manner possible!"
+            "You are an helpfull assistant. Speak in the most human-like manner possible!" //System message
         );
 
         Scanner sc = new Scanner(System.in);
