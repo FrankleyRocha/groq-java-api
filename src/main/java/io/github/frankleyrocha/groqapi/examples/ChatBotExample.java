@@ -1,9 +1,9 @@
-package digital.ikr.groqapi.examples;
+package io.github.frankleyrocha.groqapi.examples;
 
 import java.util.Scanner;
 
-import digital.ikr.groqapi.GroqApi;
-import digital.ikr.groqapi.GroqChatBot;
+import io.github.frankleyrocha.groqapi.GroqApi;
+import io.github.frankleyrocha.groqapi.GroqChatBot;
 
 public class ChatBotExample {
 
@@ -33,7 +33,7 @@ public class ChatBotExample {
                 break;
             }
 
-            String assistantMessage = bot.completions(userMessage);
+            String assistantMessage = bot.chat(userMessage);
 
             System.out.println();
             System.out.println(assistantMessage);

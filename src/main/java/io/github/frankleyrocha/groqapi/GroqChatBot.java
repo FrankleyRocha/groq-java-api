@@ -1,4 +1,4 @@
-package digital.ikr.groqapi;
+package io.github.frankleyrocha.groqapi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class GroqChatBot {
         this.memory.add(new GroqApi.Message("system",systemMessage));
     }
 
-    public String completions(String message){
+    public String chat(String message){
 
         memory.add(new GroqApi.Message(
             "user",

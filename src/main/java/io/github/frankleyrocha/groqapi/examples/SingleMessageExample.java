@@ -1,6 +1,6 @@
-package digital.ikr.groqapi.examples;
+package io.github.frankleyrocha.groqapi.examples;
 
-import digital.ikr.groqapi.GroqApi;
+import io.github.frankleyrocha.groqapi.GroqApi;
 
 public class SingleMessageExample {
 

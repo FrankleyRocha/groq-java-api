@@ -1,4 +1,4 @@
-package digital.ikr.groqapi;
+package io.github.frankleyrocha.groqapi;
 
 import java.net.URI;
 import java.net.http.HttpClient;
