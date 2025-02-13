@@ -10,6 +10,8 @@ Groq API Java Client Library
 </dependency>
 ```
 
+[Examples repo](https://github.com/FrankleyRocha/groq-java-api-examples)
+
 # SingleMessageExample
 ````Java
 package io.github.frankleyrocha.groqapi.examples;
