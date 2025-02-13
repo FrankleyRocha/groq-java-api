@@ -92,7 +92,7 @@ public class SingleMessageWithSystemExample {
 
 ### 🤖 ChatBotExample
 
-A simple chatbot example:
+A simple example of a chatbot with memory:
 
 ```java
 package io.github.frankleyrocha.groqapi.examples;
