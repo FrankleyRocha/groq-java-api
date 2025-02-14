@@ -51,8 +51,10 @@ public class GroqApi {
     public String completions(String model, List<Message> messages){
 
         String endpointUrl = this.baseUrl+"/chat/completions";
+
         String requestBody = "{\"model\":\""+model+"\", \"messages\":"+messages+"}";
         String responseBody = apiCall(endpointUrl, requestBody);
+
         String content = JsonPath.read(responseBody, "$.choices[0].message.content");
 
         return content;
