@@ -15,7 +15,7 @@ public class GroqApi {
     private final String apiKey;
 
     public GroqApi(String apiKey){
-        this.baseUrl = "https://api.groq.com";
+        this.baseUrl = "https://api.groq.com/openai/v1";
         this.apiKey = apiKey;
     }
 
@@ -50,7 +50,7 @@ public class GroqApi {
 
     public String completions(String model, List<Message> messages){
 
-        String endpointUrl = this.baseUrl+"/openai/v1/chat/completions";
+        String endpointUrl = this.baseUrl+"/chat/completions";
         String requestBody = "{\"model\":\""+model+"\", \"messages\":"+messages+"}";
         String responseBody = apiCall(endpointUrl, requestBody);
         String content = JsonPath.read(responseBody, "$.choices[0].message.content");
