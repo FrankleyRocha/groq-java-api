@@ -13,6 +13,7 @@ public class GroqApi {
 
     private final String baseUrl;
     private final String apiKey;
+    private boolean jsonOutput = false;
 
     public GroqApi(String apiKey){
         this.baseUrl = "https://api.groq.com/openai/v1";
@@ -52,7 +53,11 @@ public class GroqApi {
 
         String endpointUrl = this.baseUrl+"/chat/completions";
 
-        String requestBody = "{\"model\":\""+model+"\", \"messages\":"+messages+"}";
+        String requestBody = "{\"model\":\"%s\", \"messages\":%s, \"response_format\":{\"type\":\"%s\"}}".formatted(
+            model,
+            messages,
+            jsonOutput?"json_object":"text");
+
         String responseBody = apiCall(endpointUrl, requestBody);
 
         String content = JsonPath.read(responseBody, "$.choices[0].message.content");
@@ -103,9 +108,17 @@ public class GroqApi {
                 .replace("\r", "\\r")
                 .replace("\t", "\\t");
 
-            return "{\"role\":\""+role+"\",\"content\":\""+jsonSafe+"\"}";
+            return "{\"role\":\"%s\",\"content\":\"%s\"}".formatted(role, jsonSafe);
         }
 
+    }
+
+    public void setJsonOutput(boolean jsonOutput) {
+        this.jsonOutput = jsonOutput;
+    }
+
+    public boolean isJsonOutput() {
+        return jsonOutput;
     }
 
 }
